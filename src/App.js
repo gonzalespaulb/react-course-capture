@@ -1,5 +1,10 @@
 import React from 'react';
 import AboutUs from './pages/AboutUs';
+import './App.css';
+
+const styling = {
+  backgroundColor: `red`,
+}
 
 function App() {
   return (
