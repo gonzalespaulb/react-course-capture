@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Instead of href use to and instead of A tags use link
+import { Link } from 'react-router-dom';
+
 //........................................................................ Styling--0 
 
 const nav = {
@@ -44,16 +47,16 @@ const navLi = {
 const Nav = () => {
     return(
         <nav style={nav}>
-            <a style={navH1}>Capture</a>
+            <Link style={navH1} to="/">Capture</Link>
             <ul style={navUl}>
                 <li style={navLi}>
-                    <a style={navA} href="#">1. About Us</a>
+                    <Link style={navA} to="/">1. About Us</Link>
                 </li>
                 <li style={navLi}>
-                    <a style={navA} href="#">2. Our Work</a>
+                    <Link style={navA} to="/work">2. Our Work</Link>
                 </li>
                 <li style={navLi}>
-                    <a style={navA} href="#">3. Contact Us</a>
+                    <Link style={navA} to="/contact">3. Contact Us</Link>
                 </li>
             </ul>
         </nav>
