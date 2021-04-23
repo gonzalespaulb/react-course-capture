@@ -1,14 +1,12 @@
 import React from 'react';
 import AboutUs from './pages/AboutUs';
 import './App.css';
-
-const styling = {
-  backgroundColor: `red`,
-}
+import Nav from './components/Nav'
 
 function App() {
   return (
     <div className="App">
+      <Nav/>
       <AboutUs/>
     </div>
   );
