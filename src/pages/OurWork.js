@@ -1,9 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
 import athlete from '../img/athlete-small.png';
 import theracer from '../img/theracer-small.png';
 import goodtimes from '../img/goodtimes-small.png';
+import {motion} from 'framer-motion';
+import {pageAnimation} from '../animation';
 
 //........................................................................ Styling--0
 
@@ -11,7 +12,7 @@ const work = {
     minHeight: `100vh`,
     overflow: `hidden`,
     padding: `5rem 10rem`,
-    background: `white`,
+    background: `#ffffff`,
 }
 
 const movie = {
@@ -20,6 +21,7 @@ const movie = {
 
 const movieH2 = {
     padding: `1rem 0rem`,
+    color: `#333`
 }
 
 const line = {
@@ -43,11 +45,11 @@ const img = {
 //........................................................................ Rendered--0
 const OurWork = () => {
     return(
-        <div style={work}>
+        <motion.div variants={pageAnimation} initial="hidden" animate="show" exit="exit" style={work}>
             <div style={movie} className="movie">
                 <h2 style={movieH2}>The Athlete</h2>
                 <div style={line} className="line"></div>
-                <Link>
+                <Link to="/work/the-athlete">
                     <img style={img} src={athlete} alt="athlete"/>
                 </Link>
             </div>
@@ -55,7 +57,7 @@ const OurWork = () => {
             <div style={movie} className="movie">
                 <h2 style={movieH2}>The Racer</h2>
                 <div style={line} className="line"></div>
-                <Link>
+                <Link to="/work/the-racer">
                     <img style={img} src={theracer} alt="theracer"/>
                 </Link>
             </div>
@@ -63,11 +65,11 @@ const OurWork = () => {
             <div style={movie} className="movie">
                 <h2 style={movieH2}>Good Times</h2>
                 <div style={line} className="line"></div>
-                <Link>
+                <Link to="/work/good-times">
                     <img style={img} src={goodtimes} alt="goodtimes"/>
                 </Link>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
