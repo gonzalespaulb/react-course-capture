@@ -13,10 +13,12 @@ export const AboutLayout = {
 export const DescriptionLayout = {
     flex: 1,
     paddingRight: `5rem`,
+    zIndex: 2,
 }
 
 export const ImageLayout = {
     flex: 1, 
     overflow: `hidden`,
+    zIndex: 2,
 }
 
