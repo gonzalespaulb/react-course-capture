@@ -5,6 +5,10 @@ import money from '../img/money.svg';
 import teamwork from '../img/teamwork.svg';
 import home2 from '../img/home2.png';
 import {AboutLayout, DescriptionLayout, ImageLayout} from '../styleComponents';
+import {useScroll} from './useScroll';
+import {scrollReveal} from '../animation';
+import { motion } from 'framer-motion';
+
 
 //........................................................................ Styling--0 
 
@@ -47,8 +51,12 @@ const cardH3 = {
 //........................................................................ Rendered--0 
 
 const ServicesSection = () => {
+
+    const [element, controls] = useScroll();
+
+    
     return(
-        <div style={AboutLayout} className="services">
+        <motion.div style={AboutLayout} variants={scrollReveal} animate={controls} ref={element} initial="hidden" className="services">
             <div style={DescriptionLayout} className="description">
                 <h2 style={servicesH2}>High <span>quality</span> service.</h2>
                 <div style={cards} className="cards">
@@ -93,7 +101,7 @@ const ServicesSection = () => {
             <div style={ImageLayout} className="image">
                 <img src={home2} alt="camera"/>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
